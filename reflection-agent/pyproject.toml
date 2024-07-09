@@ -11,6 +11,7 @@ python-dotenv = "^1.0.1"
 langchain = "^0.2.7"
 langchain-openai = "^0.1.14"
 langgraph = "^0.1.5"
+grandalf = "^0.8"
 
 
 [build-system]
