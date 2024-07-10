@@ -10,7 +10,7 @@ from langgraph.graph import END, MessageGraph
 
 from chains import generate_chain, reflection_chain
 
-REFLECT = "reflect"
+REFLECT: str = "reflect"
 GENERATE = "generate"
 
 
@@ -34,7 +34,7 @@ builder.set_entry_point(GENERATE)
 
 # A conditional edge to decide which state to go to.
 def should_continue(state: List[BaseMessage]) -> Literal[REFLECT, END]:
-    if len(state) > 2:
+    if len(state) > 4:
         return END
     return REFLECT
 
@@ -57,8 +57,4 @@ if __name__ == "__main__":
     inputs = HumanMessage(content="""
         Write a tweet about recent news events        
     """)
-    # final_state: List[BaseMessage] = graph.invoke(inputs)
-    # for msg in final_state:
-    #     print(msg.type)
-    #     print(msg.content)
-    #     print("-" * 100)
+    final_state: List[BaseMessage] = graph.invoke(inputs)
