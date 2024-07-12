@@ -32,3 +32,9 @@ Self RAG
     * If yes, we send the answer to the LLM again and ask it to correct it.
   - Next we check if the answer answered the original question
     * If no, we ask for another web search and generate a new answer
+
+Adaptive RAG
+------------
+* Routes the question to different RAG flows depending on its content.
+  - First we check if the question is related to the vector store 
+  - If not, we'll go online to find the answer

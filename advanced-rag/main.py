@@ -7,6 +7,6 @@ if __name__ == "__main__":
     print ("Advanced RAG")
 
     print (app.invoke(input={
-        "question": "What is agent memory?"
-        #"question": "How to make pizza?"
+        #"question": "What is agent memory?"
+        "question": "How to make pizza?"
     }))
